@@ -3,7 +3,7 @@ import type { NextRequest } from "next/server"
 import { verify } from "jsonwebtoken"
 
 // Pages that don't require authentication
-const publicPages = ["/", "/login", "/register", "/about", "/pricing", "/contact", "/terms", "/privacy"]
+const publicPages = ["/", "/login", "/register", "/about", "/pricing", "/contact", "/terms", "/privacy", "/dashboard/influencer", "/dashboard/influencer/profile" ,"/dashboard/company", "/dashboard/company/campaigns"]
 
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl
