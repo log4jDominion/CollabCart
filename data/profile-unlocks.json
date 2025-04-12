@@ -1,0 +1,16 @@
+[
+  {
+    "id": "1",
+    "companyId": "1",
+    "influencerId": "2",
+    "paymentIntentId": "pi_123456789",
+    "unlockDate": "2023-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "2",
+    "companyId": "2",
+    "influencerId": "1",
+    "paymentIntentId": "pi_987654321",
+    "unlockDate": "2023-07-20T00:00:00.000Z"
+  }
+]

@@ -1,0 +1,47 @@
+[
+  {
+    "id": "1",
+    "companyId": "1",
+    "name": "Summer Collection Launch",
+    "description": "Fashion influencers promoting our summer line",
+    "category": "Fashion",
+    "budget": "$5,000",
+    "targetAudience": "Women 18-34 interested in sustainable fashion",
+    "targetLocation": "United States",
+    "startDate": "2023-06-01T00:00:00.000Z",
+    "endDate": "2023-08-31T00:00:00.000Z",
+    "createdAt": "2023-05-15T00:00:00.000Z",
+    "updatedAt": "2023-05-15T00:00:00.000Z",
+    "influencers": ["1"]
+  },
+  {
+    "id": "2",
+    "companyId": "2",
+    "name": "Product Review Campaign",
+    "description": "Tech reviewers testing our new gadget",
+    "category": "Technology",
+    "budget": "$3,000",
+    "targetAudience": "Tech enthusiasts aged 25-45",
+    "targetLocation": "United States, Canada",
+    "startDate": "2023-07-01T00:00:00.000Z",
+    "endDate": "2023-09-30T00:00:00.000Z",
+    "createdAt": "2023-06-15T00:00:00.000Z",
+    "updatedAt": "2023-06-15T00:00:00.000Z",
+    "influencers": ["2"]
+  },
+  {
+    "id": "3",
+    "companyId": "1",
+    "name": "Brand Awareness",
+    "description": "Lifestyle influencers sharing our brand story",
+    "category": "Lifestyle",
+    "budget": "$2,500",
+    "targetAudience": "Young adults interested in sustainable living",
+    "targetLocation": "Global",
+    "startDate": "2023-08-01T00:00:00.000Z",
+    "endDate": "2023-10-31T00:00:00.000Z",
+    "createdAt": "2023-07-15T00:00:00.000Z",
+    "updatedAt": "2023-07-15T00:00:00.000Z",
+    "influencers": ["1", "2"]
+  }
+]

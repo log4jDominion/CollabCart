@@ -1,0 +1,118 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  name      String
+  email     String   @unique
+  password  String
+  userType  String   // "influencer" or "company"
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relations
+  influencerProfile InfluencerProfile?
+  companyProfile    CompanyProfile?
+  campaigns         Campaign[]
+}
+
+model InfluencerProfile {
+  id         String   @id @default(cuid())
+  userId     String   @unique
+  bio        String?
+  location   String?
+  categories String[] @default([])
+  priceRange String?
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  // Relations
+  user           User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  socialAccounts SocialAccount[]
+  campaignLinks  CampaignLink[]
+  profileUnlocks ProfileUnlock[]
+}
+
+model CompanyProfile {
+  id          String   @id @default(cuid())
+  userId      String   @unique
+  website     String?
+  industry    String?
+  description String?
+  location    String?
+  size        String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relations
+  user           User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+  profileUnlocks ProfileUnlock[]
+}
+
+model SocialAccount {
+  id           String   @id @default(cuid())
+  influencerId String
+  platform     String   // "instagram", "youtube", "twitter", "tiktok", "linkedin"
+  username     String
+  profileUrl   String?
+  followers    Int      @default(0)
+  engagement   Float    @default(0)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  // Relations
+  influencer   InfluencerProfile @relation(fields: [influencerId], references: [id], onDelete: Cascade)
+}
+
+model Campaign {
+  id             String   @id @default(cuid())
+  companyId      String
+  name           String
+  description    String
+  category       String
+  budget         String
+  targetAudience String?
+  targetLocation String?
+  startDate      DateTime
+  endDate        DateTime
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  // Relations
+  company     User           @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  influencers CampaignLink[]
+}
+
+model CampaignLink {
+  id           String   @id @default(cuid())
+  campaignId   String
+  influencerId String
+  status       String   @default("pending") // "pending", "accepted", "rejected", "completed"
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  // Relations
+  campaign   Campaign          @relation(fields: [campaignId], references: [id], onDelete: Cascade)
+  influencer InfluencerProfile @relation(fields: [influencerId], references: [id], onDelete: Cascade)
+}
+
+model ProfileUnlock {
+  id              String   @id @default(cuid())
+  companyId       String
+  influencerId    String
+  paymentIntentId String?
+  unlockDate      DateTime @default(now())
+
+  // Relations
+  company    CompanyProfile    @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  influencer InfluencerProfile @relation(fields: [influencerId], references: [id], onDelete: Cascade)
+}

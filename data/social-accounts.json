@@ -1,0 +1,46 @@
+[
+  {
+    "id": "1",
+    "influencerId": "1",
+    "platform": "Instagram",
+    "username": "@johndoe",
+    "profileUrl": "https://instagram.com/johndoe",
+    "followers": 85200,
+    "engagement": 5.2,
+    "createdAt": "2023-01-01T00:00:00.000Z",
+    "updatedAt": "2023-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "2",
+    "influencerId": "1",
+    "platform": "YouTube",
+    "username": "@johndoe",
+    "profileUrl": "https://youtube.com/johndoe",
+    "followers": 32400,
+    "engagement": 3.8,
+    "createdAt": "2023-01-01T00:00:00.000Z",
+    "updatedAt": "2023-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "3",
+    "influencerId": "2",
+    "platform": "Instagram",
+    "username": "@janesmith",
+    "profileUrl": "https://instagram.com/janesmith",
+    "followers": 250000,
+    "engagement": 3.8,
+    "createdAt": "2023-01-02T00:00:00.000Z",
+    "updatedAt": "2023-01-02T00:00:00.000Z"
+  },
+  {
+    "id": "4",
+    "influencerId": "2",
+    "platform": "TikTok",
+    "username": "@janesmith",
+    "profileUrl": "https://tiktok.com/@janesmith",
+    "followers": 420000,
+    "engagement": 7.5,
+    "createdAt": "2023-01-02T00:00:00.000Z",
+    "updatedAt": "2023-01-02T00:00:00.000Z"
+  }
+]
